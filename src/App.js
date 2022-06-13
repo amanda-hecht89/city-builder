@@ -19,8 +19,7 @@ function App() {
   // finally, you'll need an array of slogans, which could start out as ['The City of Excellence'] for example
   const [slogans, setSlogans] = useState('');
   const [sloganInForm, setSloganInForm] = useState('');
-  }
-
+  
   return (
     <div className="App">
       {/* here, the City component takes in skylineId, waterfrontId, castleId as props. It'll use those ids to render pictures correctly. */}
@@ -46,3 +45,4 @@ function App() {
 }
 
 export default App;
+
