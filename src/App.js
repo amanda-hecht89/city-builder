@@ -17,13 +17,9 @@ function App() {
   // you'll need to track a city name, which starts as the city name of your choice.
   const [cityName, setCityName] = useState('');
   // finally, you'll need an array of slogans, which could start out as ['The City of Excellence'] for example
-  const [slogans, setSlogans] = useState('');
-  const [sloganInForm, setSloganInForm] = useState(''); 
+  const [slogans, setSlogans] = useState([]);
+   
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    setSlogans([...slogans]);
-  }
 
   return (
     <div className="App">
@@ -42,11 +38,13 @@ function App() {
           <SkylineDropdown setSkylineId={setSkylineId} />
           <CastleDropdown setCastleId={setCastleId} />
           <CityNameInput setCityName={setCityName} />
-          <SloganForm handleSubmit={handleSubmit} setSloganInForm={setSloganInForm} sloganInForm={sloganInForm} />
+          <SloganForm setSlogans={setSlogans} slogans={slogans} />
         </section>
+        <SloganList slogans={slogans}/>
         {/* here, the SloganForm component takes in the setSlogans state handler function and the slogans array that live in state */}
         {/* here, the SloganList component takes the array of slogans that lives in state */}
       </div>
+
     </div>
   );
 }
