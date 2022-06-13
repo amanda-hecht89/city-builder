@@ -1,9 +1,14 @@
 import React from 'react';
 
-export default function Slogan(props) {
+export default function Slogan({ slogan, key }) {
   return (
-    <div className='slogan'>
+    <li key={key} className='slogan'>
       {/* this component takes in a slogan as a prop. Render it out here however you like */}
-    </div>
+      {
+        slogan 
+      }
+
+
+    </li>
   );
 }
